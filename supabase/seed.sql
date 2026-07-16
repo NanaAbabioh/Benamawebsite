@@ -112,3 +112,37 @@ on conflict (name) do update set
   default_spice    = excluded.default_spice,
   has_sizes        = excluded.has_sizes,
   sort_order       = excluded.sort_order;
+
+-- Options ---------------------------------------------------------------------
+-- Every Main Meal includes one protein of choice (required, pick exactly one).
+-- Waakye's traditional extras (boiled egg, gari, shito, spaghetti) are already
+-- part of the dish and are separate from this protein selection.
+insert into item_option_groups (item_id, name, min_select, max_select, is_required, sort_order)
+select mi.id, 'Choose your protein', 1, 1, true, 1
+from menu_items mi
+where mi.name in (
+  'Smoky Fire-Kissed Party Rice',
+  'The Street King''s Rice & Beans',
+  'Golden Wok-Tossed Rice'
+)
+on conflict (item_id, name) do update set
+  min_select  = excluded.min_select,
+  max_select  = excluded.max_select,
+  is_required = excluded.is_required,
+  sort_order  = excluded.sort_order;
+
+insert into item_options (group_id, name, price_delta, is_default, sort_order)
+select g.id, o.name, o.price_delta, o.is_default, o.sort_order
+from item_option_groups g
+cross join (values
+  ('Crispy Fried Chicken', 0.00, true,  1),
+  ('Boiled Egg',           0.00, false, 2),
+  ('Seasoned Beef',        2.00, false, 3),
+  ('Tender Goat',          3.00, false, 4),
+  ('Grilled Tilapia',      4.00, false, 5)
+) as o(name, price_delta, is_default, sort_order)
+where g.name = 'Choose your protein'
+on conflict (group_id, name) do update set
+  price_delta = excluded.price_delta,
+  is_default  = excluded.is_default,
+  sort_order  = excluded.sort_order;
