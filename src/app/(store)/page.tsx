@@ -33,6 +33,8 @@ export default function HomePage() {
 
         {/* Warm scrim so the text stays legible over the footage. */}
         <div className="absolute inset-0 bg-gradient-to-b from-cocoa/70 via-cocoa/40 to-cocoa/85" />
+        {/* Melt the footage into the page background — no hard section edge. */}
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-cream" />
 
         <div className="relative mx-auto flex min-h-[80vh] w-full max-w-6xl flex-col items-center justify-center gap-6 px-4 py-24 text-center sm:px-6">
           <Image

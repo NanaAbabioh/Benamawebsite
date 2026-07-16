@@ -6,7 +6,10 @@ export function SiteFooter() {
   const { contact, hours } = siteConfig;
 
   return (
-    <footer className="bg-cocoa text-cream">
+    <footer className="text-cream">
+      {/* Soft hand-off from the page's cream into the cocoa footer. */}
+      <div aria-hidden className="h-16 bg-gradient-to-b from-cream to-cocoa sm:h-20" />
+      <div className="bg-cocoa">
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3">
         {/* Brand */}
         <div className="space-y-4">
@@ -75,6 +78,7 @@ export function SiteFooter() {
           </p>
           <p>Salt Lake City, UT</p>
         </div>
+      </div>
       </div>
     </footer>
   );
