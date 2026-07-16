@@ -22,7 +22,7 @@ Online-ordering site for a Ghanaian restaurant in Salt Lake City. Customers orde
 **Key implementation decisions:**
 - Guest checkout + optional accounts (order history, favorites, saved cards via Stripe Customers)
 - Pickup: ASAP (estimated ready time) + scheduled slots
-- Mains: Regular / Large sizes, Large = +$6.00 flat
+- Mains: Regular / Large sizes, Large = +$6.00 flat; protein choice included with price deltas (Crispy Fried Chicken +$0, Boiled Egg +$0, Seasoned Beef +$2.00, Tender Goat +$3.00, Grilled Tilapia +$4.00)
 - Spice selector: horizontal fill-bar heat meter with chili 🌶️ icon — Low (⅓ fill), Medium (⅔), Spicy Hot (full); per-dish defaults in MENU.md
 - No tipping at checkout
 - Notifications: SMS (Twilio) + email (Resend) for order received / food ready
@@ -43,6 +43,5 @@ Online-ordering site for a Ghanaian restaurant in Salt Lake City. Customers orde
 ## Known open items (don't block on these)
 
 - Real address, hours, phone — use config placeholders
-- Whether mains include a protein choice — model options flexibly (option groups with price deltas) so it's easy to add
 - Allergen labels, food photography — placeholders for now
 - Domain: eatbenama.com shortlisted (not yet purchased)

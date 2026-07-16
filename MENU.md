@@ -3,6 +3,7 @@
 *Naming style: crave-first name, local name in parentheses.*
 *Spice: heat meter — a horizontal bar with a chili-pepper 🌶️ gauge that FILLS to the chosen level: Low (⅓), Medium (⅔), Spicy Hot (full). Customer selects per dish unless marked N/A.*
 *Portions: Main Meals come in Regular and Large (Large = +$6.00 flat).*
+*Protein: every Main Meal includes one protein of choice; premium picks carry an upcharge — Crispy Fried Chicken (included), Seasoned Beef (+$2.00), Tender Goat (+$3.00), Grilled Tilapia (+$4.00), Boiled Egg (included).*
 
 ---
 
@@ -53,6 +54,5 @@ Buttery, flaky pastry wrapped around richly seasoned minced beef and onions — 
 
 ## Open items
 
-1. **Mains — what's included?** Do jollof/waakye/fried rice come with a protein (chicken, beef, fish, goat)? If protein is a choice, it becomes an option selector (possibly with price differences). Waakye traditionally comes with extras (gari, shito, boiled egg, spaghetti) — included or add-ons?
 3. **Extras category** — the strategy mentions extras/sauces (e.g., shito, extra protein, boiled egg). List these when ready.
 4. **Allergens** — flag nuts, gluten, dairy, shellfish per item before launch.

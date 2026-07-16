@@ -77,6 +77,7 @@ Realtime subscriptions power the live dashboard and customer order tracking. Row
 - **Notifications:** SMS + email for order received / food ready (Twilio + Resend)
 - **Spice levels:** heat meter UI — horizontal fill bar with chili-pepper 🌶️ gauge; fills to Low (⅓), Medium (⅔), Spicy Hot (full); customer selects per dish, each dish has a default
 - **Portions:** Main Meals in Regular / Large (Large = +$6.00 flat)
+- **Protein:** mains include one protein of choice with price deltas — Chicken/Egg included, Beef +$2, Goat +$3, Tilapia +$4
 
 ## 8. Build roadmap
 
