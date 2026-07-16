@@ -1,12 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { MenuItem } from "@/lib/menu";
 import { formatPrice } from "@/lib/format";
 import { spiceLabel } from "@/lib/spice";
 import { CustomizeModal } from "@/components/menu/customize-modal";
 
-export function ItemCard({ item }: { item: MenuItem }) {
+export function ItemCard({
+  item,
+  categorySlug,
+}: {
+  item: MenuItem;
+  categorySlug?: string;
+}) {
   const [open, setOpen] = useState(false);
 
   const hasUpcharge =
@@ -16,11 +23,21 @@ export function ItemCard({ item }: { item: MenuItem }) {
   return (
     <>
       <div className="flex flex-col overflow-hidden rounded-brand border border-cream-deep bg-white/60">
-        {/* Placeholder art until food photography is shot. */}
-        <div className="relative flex h-32 items-center justify-center bg-gradient-to-br from-palm/25 via-gold/20 to-pepper/25">
-          <span className="font-display text-lg font-semibold text-cocoa/40">
-            {item.localName ?? item.name}
-          </span>
+        <div className="relative aspect-[4/3] bg-gradient-to-br from-palm/25 via-gold/20 to-pepper/25">
+          {item.imageUrl ? (
+            <Image
+              src={item.imageUrl}
+              alt={`${item.name}${item.localName ? ` (${item.localName})` : ""}`}
+              fill
+              sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          ) : (
+            // Placeholder art for items without photography yet.
+            <span className="flex h-full items-center justify-center font-display text-lg font-semibold text-cocoa/40">
+              {item.localName ?? item.name}
+            </span>
+          )}
           {item.isSoldOut && (
             <span className="absolute right-2 top-2 rounded-full bg-cocoa px-2.5 py-1 text-xs font-semibold text-cream">
               Sold out
@@ -66,7 +83,13 @@ export function ItemCard({ item }: { item: MenuItem }) {
         </div>
       </div>
 
-      {open && <CustomizeModal item={item} onClose={() => setOpen(false)} />}
+      {open && (
+        <CustomizeModal
+          item={item}
+          categorySlug={categorySlug}
+          onClose={() => setOpen(false)}
+        />
+      )}
     </>
   );
 }

@@ -25,6 +25,7 @@ export type MenuItem = {
   name: string;
   localName: string | null;
   description: string | null;
+  imageUrl: string | null;
   basePrice: number;
   spiceSelectable: boolean;
   defaultSpice: SpiceLevel | null;
@@ -57,7 +58,7 @@ export async function getMenu(): Promise<MenuCategory[]> {
       `
       id, name, slug, sort_order, is_active,
       menu_items (
-        id, name, local_name, description, base_price, spice_selectable,
+        id, name, local_name, description, image_url, base_price, spice_selectable,
         default_spice, has_sizes, large_surcharge, is_sold_out, is_available, sort_order,
         item_option_groups (
           id, name, min_select, max_select, is_required, sort_order,
@@ -85,6 +86,7 @@ export async function getMenu(): Promise<MenuCategory[]> {
           name: item.name,
           localName: item.local_name,
           description: item.description,
+          imageUrl: item.image_url,
           basePrice: item.base_price,
           spiceSelectable: item.spice_selectable,
           defaultSpice: item.default_spice,
