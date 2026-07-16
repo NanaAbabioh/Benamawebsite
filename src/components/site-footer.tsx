@@ -18,7 +18,7 @@ export function SiteFooter() {
             className="h-20 w-20 object-contain"
           />
           <p className="max-w-xs font-display text-lg text-gold">
-            {siteConfig.secondaryLine}
+            Bold Authentic West African Flavour
           </p>
           <div className="flex gap-4 text-sm text-cream/70">
             <Link href={siteConfig.social.instagram} className="hover:text-gold">

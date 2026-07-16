@@ -46,10 +46,6 @@ export default function HomePage() {
           <h1 className="max-w-2xl font-display text-4xl font-semibold text-cream sm:text-6xl">
             {siteConfig.tagline}
           </h1>
-          <p className="max-w-xl text-base text-cream/85 sm:text-lg">
-            Family-run Ghanaian kitchen in Salt Lake City. Order online, pick up
-            hot — {siteConfig.secondaryLine.toLowerCase()}
-          </p>
           <Link
             href="/menu"
             className="mt-2 inline-flex items-center rounded-brand bg-pepper px-8 py-3.5 text-base font-semibold text-cream shadow-lg transition-colors hover:bg-pepper-dark"
@@ -69,7 +65,7 @@ export default function HomePage() {
             {
               step: "1",
               title: "Browse the menu",
-              body: "Jollof, waakye, kelewele and more — customize spice and size to taste.",
+              body: "Explore our assorted menu of main dishes, sides, desserts, and drinks.",
             },
             {
               step: "2",
@@ -79,7 +75,7 @@ export default function HomePage() {
             {
               step: "3",
               title: "Pick up in store",
-              body: "We'll text you the moment your food is ready. Straight from our family pot.",
+              body: "We'll text you the moment your food is ready.",
             },
           ].map((s) => (
             <div

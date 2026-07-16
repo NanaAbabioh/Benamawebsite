@@ -18,11 +18,8 @@ export default async function MenuPage() {
     <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
       <header className="mb-8 text-center">
         <h1 className="font-display text-4xl font-semibold text-cocoa">
-          Our Menu
+          Explore our Menu
         </h1>
-        <p className="mt-2 text-cocoa/70">
-          Come hungry — every dish made to order, ready for pickup.
-        </p>
       </header>
 
       {menu.length === 0 ? (
