@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+import { CartButton } from "@/components/cart/cart-button";
 
 const navLinks = [
   { href: "/menu", label: "Menu" },
@@ -42,12 +43,15 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link
-          href="/menu"
-          className="inline-flex items-center rounded-brand bg-pepper px-4 py-2 text-sm font-semibold text-cream shadow-sm transition-colors hover:bg-pepper-dark"
-        >
-          Order Now
-        </Link>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <Link
+            href="/menu"
+            className="inline-flex items-center rounded-brand bg-pepper px-4 py-2 text-sm font-semibold text-cream shadow-sm transition-colors hover:bg-pepper-dark"
+          >
+            Order Now
+          </Link>
+          <CartButton />
+        </div>
       </div>
     </header>
   );
