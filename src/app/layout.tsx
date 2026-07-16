@@ -2,10 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/config";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import { CartProvider } from "@/components/cart/cart-provider";
-import { CartDrawer } from "@/components/cart/cart-drawer";
 
 // Display serif for headings, logo-adjacent type.
 const fraunces = Fraunces({
@@ -51,14 +47,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-cocoa">
-        <CartProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-          <CartDrawer />
-        </CartProvider>
-      </body>
+      <body className="min-h-full bg-cream text-cocoa">{children}</body>
     </html>
   );
 }
