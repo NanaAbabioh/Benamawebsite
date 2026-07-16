@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useCart } from "@/components/cart/cart-provider";
 import { lineTotal, type CartItem } from "@/lib/cart";
 import { formatPrice } from "@/lib/format";
-import { spiceLabel } from "@/components/menu/spice-meter";
+import { spiceLabel } from "@/lib/spice";
 
 function summarize(item: CartItem): string {
   const parts: string[] = [];
@@ -129,13 +130,13 @@ export function CartDrawer() {
             <p className="mb-3 text-xs text-cocoa/50">
               Tax calculated at checkout. Pickup only.
             </p>
-            <button
-              type="button"
-              disabled
-              className="w-full cursor-not-allowed rounded-brand bg-pepper/40 px-5 py-3 text-sm font-semibold text-cream"
+            <Link
+              href="/checkout"
+              onClick={closeCart}
+              className="block w-full rounded-brand bg-pepper px-5 py-3 text-center text-sm font-semibold text-cream transition-colors hover:bg-pepper-dark"
             >
-              Checkout — coming next
-            </button>
+              Go to checkout
+            </Link>
           </div>
         )}
       </aside>

@@ -1,16 +1,7 @@
 "use client";
 
 import type { SpiceLevel } from "@/lib/menu";
-
-const LEVELS: { key: SpiceLevel; label: string; pct: number }[] = [
-  { key: "low", label: "Low", pct: 33 },
-  { key: "medium", label: "Medium", pct: 66 },
-  { key: "hot", label: "Spicy Hot", pct: 100 },
-];
-
-export function spiceLabel(level: SpiceLevel): string {
-  return LEVELS.find((l) => l.key === level)?.label ?? "";
-}
+import { SPICE_LEVELS as LEVELS, spiceLabel } from "@/lib/spice";
 
 /** Interactive heat meter: a horizontal bar that fills to the chosen level. */
 export function SpiceMeter({

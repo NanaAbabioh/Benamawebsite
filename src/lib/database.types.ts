@@ -247,6 +247,7 @@ export type Database = {
       }
       orders: {
         Row: {
+          allergen_notes: string | null
           contact_email: string
           contact_name: string
           contact_phone: string
@@ -264,10 +265,12 @@ export type Database = {
           tax_rate: number
           tip: number
           total: number
+          tracking_token: string
           updated_at: string
           user_id: string | null
         }
         Insert: {
+          allergen_notes?: string | null
           contact_email: string
           contact_name: string
           contact_phone: string
@@ -285,10 +288,12 @@ export type Database = {
           tax_rate?: number
           tip?: number
           total?: number
+          tracking_token?: string
           updated_at?: string
           user_id?: string | null
         }
         Update: {
+          allergen_notes?: string | null
           contact_email?: string
           contact_name?: string
           contact_phone?: string
@@ -306,6 +311,7 @@ export type Database = {
           tax_rate?: number
           tip?: number
           total?: number
+          tracking_token?: string
           updated_at?: string
           user_id?: string | null
         }
@@ -379,7 +385,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      create_order: {
+        Args: {
+          p_allergen_notes?: string
+          p_contact: Json
+          p_items?: Json
+          p_pickup_type?: string
+          p_special_instructions?: string
+        }
+        Returns: Json
+      }
+      get_order: {
+        Args: { p_order_number: string; p_token: string }
+        Returns: Json
+      }
     }
     Enums: {
       order_status:

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { MenuItem } from "@/lib/menu";
 import { formatPrice } from "@/lib/format";
-import { spiceLabel } from "@/components/menu/spice-meter";
+import { spiceLabel } from "@/lib/spice";
 import { CustomizeModal } from "@/components/menu/customize-modal";
 
 export function ItemCard({ item }: { item: MenuItem }) {
