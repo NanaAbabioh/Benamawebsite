@@ -17,6 +17,12 @@ function summarize(item: CartItem): string {
 export function CartDrawer() {
   const { items, subtotal, isOpen, closeCart, setQuantity, removeItem } = useCart();
 
+  // Gentle upsell: cart has food but nothing beyond the mains yet.
+  // (Items saved before categories were tracked count as mains.)
+  const mainsOnly =
+    items.length > 0 &&
+    items.every((i) => (i.categorySlug ?? "main-meals") === "main-meals");
+
   return (
     <>
       {/* Backdrop */}
@@ -121,6 +127,30 @@ export function CartDrawer() {
 
         {items.length > 0 && (
           <div className="border-t border-cream-deep px-5 py-4">
+            {mainsOnly && (
+              <div className="mb-4 rounded-md bg-gold/15 px-3 py-2.5">
+                <p className="text-sm font-semibold text-cocoa">
+                  Complete the feast 🍽️
+                </p>
+                <p className="mt-0.5 text-xs text-cocoa/70">
+                  How about a crispy side, something ice-cold, or a sweet finish?
+                </p>
+                {/* Plain anchors (not next/link): native hash navigation fires
+                    the hashchange event MenuTabs listens for when the customer
+                    is already on /menu. */}
+                <div className="mt-2 flex gap-4 text-xs font-semibold text-pepper">
+                  <a href="/menu#sides" onClick={closeCart} className="underline hover:text-pepper-dark">
+                    Sides
+                  </a>
+                  <a href="/menu#drinks" onClick={closeCart} className="underline hover:text-pepper-dark">
+                    Drinks
+                  </a>
+                  <a href="/menu#desserts" onClick={closeCart} className="underline hover:text-pepper-dark">
+                    Desserts
+                  </a>
+                </div>
+              </div>
+            )}
             <div className="mb-1 flex items-center justify-between text-sm text-cocoa/70">
               <span>Subtotal</span>
               <span className="font-semibold text-cocoa">

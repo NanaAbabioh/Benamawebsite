@@ -43,5 +43,6 @@ Online-ordering site for a Ghanaian restaurant in Salt Lake City. Customers orde
 ## Known open items (don't block on these)
 
 - Real address, hours, phone — use config placeholders
-- Allergen labels, food photography — placeholders for now
+- Allergen labels — placeholders for now
+- Menu photos: DONE — use `Images/Menu/watermarked-4x3/` (1200×900, 4:3, logo watermarked) for `menu_items.image_url`; `Images/Menu/site-4x3/` is the clean unwatermarked set if ever needed
 - Domain: eatbenama.com shortlisted (not yet purchased)

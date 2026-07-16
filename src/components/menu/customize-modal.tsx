@@ -19,9 +19,11 @@ function defaultSelections(item: MenuItem): Record<string, string[]> {
 
 export function CustomizeModal({
   item,
+  categorySlug,
   onClose,
 }: {
   item: MenuItem;
+  categorySlug?: string;
   onClose: () => void;
 }) {
   const { addItem } = useCart();
@@ -92,6 +94,7 @@ export function CustomizeModal({
       menuItemId: item.id,
       name: item.name,
       localName: item.localName,
+      categorySlug,
       size,
       spice,
       options: chosenOptions,

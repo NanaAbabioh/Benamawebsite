@@ -13,6 +13,8 @@ export type CartItem = {
   menuItemId: string;
   name: string;
   localName: string | null;
+  /** Menu category slug (e.g. "main-meals"); optional for older saved carts. */
+  categorySlug?: string;
   size: CartSize | null;
   spice: SpiceLevel | null;
   options: CartOption[];
