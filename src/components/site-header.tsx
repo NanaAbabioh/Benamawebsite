@@ -6,12 +6,6 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/config";
 import { CartButton } from "@/components/cart/cart-button";
 
-const navLinks = [
-  { href: "/menu", label: "Menu" },
-  { href: "/about", label: "Our Story" },
-  { href: "/contact", label: "Visit" },
-];
-
 export function SiteHeader() {
   // On the homepage the header floats transparently over the hero video;
   // everywhere else it's the solid sticky bar.
@@ -47,22 +41,6 @@ export function SiteHeader() {
             {siteConfig.name}
           </span>
         </Link>
-
-        <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm font-medium transition-colors lg:text-base ${
-                overHero
-                  ? "text-cream/85 hover:text-gold"
-                  : "text-cocoa/80 hover:text-pepper"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
 
         <div className="flex items-center gap-1 sm:gap-2">
           <Link

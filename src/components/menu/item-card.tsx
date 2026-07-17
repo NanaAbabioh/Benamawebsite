@@ -64,7 +64,7 @@ export function ItemCard({
             </p>
           )}
 
-          <div className="mt-3 flex items-center gap-2">
+          <div className="my-3 flex items-center gap-2">
             {item.spiceSelectable && item.defaultSpice && (
               <span className="rounded-full bg-pepper/10 px-2 py-0.5 text-xs font-medium text-pepper">
                 🌶️ {spiceLabel(item.defaultSpice)}
@@ -72,11 +72,13 @@ export function ItemCard({
             )}
           </div>
 
+          {/* mt-auto pins the button to the card bottom so it aligns across
+              every card in a row, whatever the text length above it. */}
           <button
             type="button"
             onClick={() => setOpen(true)}
             disabled={item.isSoldOut}
-            className="mt-4 w-full rounded-brand bg-pepper px-4 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-pepper-dark disabled:cursor-not-allowed disabled:bg-cocoa/30"
+            className="mt-auto w-full rounded-brand bg-pepper px-4 py-2.5 text-sm font-semibold text-cream transition-colors hover:bg-pepper-dark disabled:cursor-not-allowed disabled:bg-cocoa/30"
           >
             {item.isSoldOut ? "Unavailable" : "Add to order"}
           </button>
