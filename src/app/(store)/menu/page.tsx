@@ -15,9 +15,9 @@ export default async function MenuPage() {
   const menu = await getMenu();
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
+    <div className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6">
       <header className="mb-8 text-center">
-        <h1 className="font-display text-4xl font-semibold text-cocoa">
+        <h1 className="font-display text-4xl font-semibold text-cocoa lg:text-5xl">
           Explore our Menu
         </h1>
       </header>

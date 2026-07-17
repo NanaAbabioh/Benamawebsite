@@ -47,10 +47,10 @@ export function ItemCard({
 
         <div className="flex flex-1 flex-col p-4">
           <div className="flex items-baseline justify-between gap-2">
-            <h3 className="font-display text-lg font-semibold leading-tight text-cocoa">
+            <h3 className="font-display text-lg font-semibold leading-tight text-cocoa lg:text-xl">
               {item.name}
             </h3>
-            <span className="whitespace-nowrap text-sm font-semibold text-pepper">
+            <span className="whitespace-nowrap text-sm font-semibold text-pepper lg:text-base">
               {hasUpcharge ? "from " : ""}
               {formatPrice(item.basePrice)}
             </span>

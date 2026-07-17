@@ -51,7 +51,7 @@ export function MenuTabs({ categories }: { categories: MenuCategory[] }) {
               role="tab"
               aria-selected={selected}
               onClick={() => select(category.slug)}
-              className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+              className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors lg:px-5 lg:text-base ${
                 selected
                   ? "bg-pepper text-cream shadow-sm"
                   : "bg-white/60 text-cocoa/70 hover:bg-cream-deep hover:text-cocoa"

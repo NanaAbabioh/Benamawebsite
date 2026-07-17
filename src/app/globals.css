@@ -37,6 +37,25 @@ html {
   color-scheme: light;
 }
 
+/* The design is rem-based and mobile-first; nudging the root size up on
+   larger screens scales type, spacing, and container widths together so
+   desktop doesn't read like a blown-up phone view. */
+@media (min-width: 1024px) {
+  html {
+    font-size: 17.5px;
+  }
+}
+@media (min-width: 1536px) {
+  html {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1920px) {
+  html {
+    font-size: 20px;
+  }
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);

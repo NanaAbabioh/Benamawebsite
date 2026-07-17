@@ -25,7 +25,7 @@ export function SiteHeader() {
           : "sticky top-0 z-40 border-b border-cream-deep bg-cream/90 backdrop-blur"
       }
     >
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:h-20">
         <Link
           href="/"
           className="flex items-center gap-2"
@@ -37,10 +37,10 @@ export function SiteHeader() {
             width={1024}
             height={1024}
             priority
-            className="h-11 w-11 object-contain"
+            className="h-11 w-11 object-contain lg:h-12 lg:w-12"
           />
           <span
-            className={`hidden font-display text-lg font-semibold sm:inline ${
+            className={`hidden font-display text-lg font-semibold sm:inline lg:text-xl ${
               overHero ? "text-cream" : "text-cocoa"
             }`}
           >
@@ -53,7 +53,7 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-colors lg:text-base ${
                 overHero
                   ? "text-cream/85 hover:text-gold"
                   : "text-cocoa/80 hover:text-pepper"
