@@ -34,7 +34,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#B3261E",
+  // Default for the cream-topped interior pages (menu, checkout, tracking).
+  // The homepage overrides this to cocoa for its dark hero.
+  themeColor: "#FBF3E4",
 };
 
 export default function RootLayout({

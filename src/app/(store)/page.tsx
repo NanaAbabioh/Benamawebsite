@@ -1,14 +1,21 @@
+import type { Viewport } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
+
+// Dark status bar so iOS Safari's top area matches the dark hero.
+export const viewport: Viewport = {
+  themeColor: "#2B1A12",
+};
 
 export default function HomePage() {
   return (
     <>
       {/* ---------- Hero ---------- */}
-      {/* bg-cream (not cocoa) so subpixel rounding at the section edge can
-          never bleed a dark hairline against the cream page. */}
-      <section className="relative isolate overflow-hidden bg-cream">
+      {/* Dark base so the page's top background (what iOS Safari samples for
+          the status bar) is dark, not cream. The hero→steps seam is handled
+          by the bottom fade + the steps section's negative top margin. */}
+      <section className="relative isolate overflow-hidden bg-cocoa">
         {/* Background video: portrait loop on mobile, 16:9 on desktop.
             autoplay + muted + playsinline keeps it decorative; poster is the
             fallback for reduced-motion / slow connections. */}

@@ -35,6 +35,10 @@
 
 html {
   color-scheme: light;
+  /* Cocoa base so iOS safe-area / overscroll zones read as the dark hero
+     (top) and cocoa footer (bottom) rather than showing cream. The cream
+     page surface is carried by <body> and the individual sections. */
+  background-color: var(--color-cocoa);
 }
 
 /* The design is rem-based and mobile-first; nudging the root size up on
